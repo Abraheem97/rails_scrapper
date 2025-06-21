@@ -1,0 +1,26 @@
+<h1>Dotidot Scraper UI</h1>
+
+<%= form_with url: "/scrape", method: :post, local: true do %>
+  <div>
+    <label>URL:</label><br>
+    <%= text_field_tag :url, @url, style: "width: 600px;" %>
+  </div>
+  <br>
+  <div>
+    <label>Fields (as JSON):</label><br>
+    <%= text_area_tag :fields, @fields_input, rows: 10, cols: 80 %>
+  </div>
+  <br>
+  <%= submit_tag "Scrape", style: "padding: 10px 20px;" %>
+<% end %>
+
+<hr>
+
+<% if @result.present? %>
+  <h2>Result</h2>
+  <pre><%= JSON.pretty_generate(@result) %></pre>
+<% elsif @error %>
+  <div style="color: red;">
+    <strong>Error:</strong> <%= @error %>
+  </div>
+<% end %>
