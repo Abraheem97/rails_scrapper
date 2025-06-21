@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'vcr'
 
 VCR.configure do |config|
@@ -6,6 +8,6 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.default_cassette_options = {
     record: :once,
-    match_requests_on: [:method, :uri]
+    match_requests_on: %i[method uri]
   }
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/services/scraper_service_spec.rb
 
 require 'rails_helper'
@@ -78,7 +80,7 @@ RSpec.describe ScraperService do
     describe '#extract_css_content' do
       it 'returns correct array for price' do
         result = service.send(:extract_css_content, doc, '.price-box__primary-price__value')
-         expect(normalize(result)).to eq(normalize(expected_result[:price]))
+        expect(normalize(result)).to eq(normalize(expected_result[:price]))
       end
 
       it 'returns string for rating_value' do

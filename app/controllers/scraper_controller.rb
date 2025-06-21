@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class ScraperController < ApplicationController
-  def new
-  end
+  def new; end
 
   def scrape
     @url = params[:url]
@@ -11,8 +12,8 @@ class ScraperController < ApplicationController
       scraper = ScraperService.new(@url)
       @result = scraper.extract(fields)
     rescue JSON::ParserError
-      @error = "Invalid JSON format in fields."
-    rescue => e
+      @error = 'Invalid JSON format in fields.'
+    rescue StandardError => e
       @error = "Scraping failed: #{e.message}"
     end
 

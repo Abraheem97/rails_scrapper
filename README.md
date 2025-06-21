@@ -4,6 +4,9 @@ This is a lightweight, API-style Ruby on Rails application that scrapes public w
 
 ---
 
+## 🎥 Screenshots
+![image](https://github.com/user-attachments/assets/3ae18fa0-870a-447a-a653-048685c0456a)
+
 ## 🚀 Features
 
 - ✅ Accepts **GET** and **POST** scraping requests
@@ -134,6 +137,14 @@ RSpec output will display passing, failing, and pending examples. Make sure your
 
 ---
 
+## 🧼 Linting with RuboCop
+
+To lint your code:
+```bash
+docker-compose run web bundle exec rubocop
+```
+
+---
 
 ## 📤 Deployment
 

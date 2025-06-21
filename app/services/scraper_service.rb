@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/services/scraper_service.rb
 
 class ScraperService
@@ -40,20 +42,21 @@ class ScraperService
     }
 
     response = HTTParty.get(@url, headers: headers, timeout: 10, follow_redirects: true)
-    
-    # Save the response body to debug.html
-    File.write("debug.html", response.body)
 
-    raise "Blocked by CAPTCHA" if response.body.include?('captcha') || response.body.include?('human')
+    # Save the response body to debug.html
+    File.write('debug.html', response.body)
+
+    raise 'Blocked by CAPTCHA' if response.body.include?('captcha') || response.body.include?('human')
 
     response.body
-  rescue => e
+  rescue StandardError => e
     raise "Scraping failed: #{e.message}"
   end
 
   def extract_css_content(doc, selector)
     elements = doc.css(selector)
     return nil if elements.empty?
+
     elements.size == 1 ? elements.first.text.strip : elements.map { |el| el.text.strip }
   end
 
