@@ -5,7 +5,8 @@ This is a lightweight, API-style Ruby on Rails application that scrapes public w
 ---
 
 ## 🎥 Screenshots
-![image](https://github.com/user-attachments/assets/3ae18fa0-870a-447a-a653-048685c0456a)
+![image](https://github.com/user-attachments/assets/c5ef573f-527a-4a1f-890e-dd9b2c11c16b)
+
 
 ## 🚀 Features
 
